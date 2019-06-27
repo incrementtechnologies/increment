@@ -1,0 +1,20 @@
+{
+  "name": "VueProjects",
+  "version": "1.0.0",
+  "description": "Vue small projects",
+  "author": "ENGR. KENNETTE CANALES",
+  "license": "MIT",
+  "scripts": {
+    "lite": "lite-server --port 10001",
+    "start": "npm run lite"
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "lite-server": "^1.3.1"
+  }
+}
