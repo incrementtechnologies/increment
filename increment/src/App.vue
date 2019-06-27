@@ -9,5 +9,9 @@ export default {
   name: 'App'
 }
 </script>
-<style>
+<style lang="scss">
+$primary: #3f0050;
+$hover: #ccc;
+$secondary: #22b173;
+
 </style>

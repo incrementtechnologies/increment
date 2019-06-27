@@ -1,16 +1,17 @@
 <template>
-  <div class="container">
-    <Tagline></Tagline>
+  <div>
+    <Expertise></Expertise>
   </div>
 </template>
 <style lang="sass" scoped>
 </style>
 <script>
 import Tagline from '@/components/contents/Tagline.vue'
+import Expertise from '@/components/contents/Expertise.vue'
 export default {
   components: {
-    Tagline
+    Tagline,
+    Expertise
   }
 }
 </script>
-
