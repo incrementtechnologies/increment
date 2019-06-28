@@ -46,7 +46,7 @@
   margin-right: 2%;
   bottom: 0px;
   background: white;
-  border-top: solid 1px $gray;
+  border-top: solid 1px $hover;
   position: absolute;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;

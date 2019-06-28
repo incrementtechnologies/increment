@@ -9,7 +9,7 @@
   width: 100%;
   float: left;
   height: 100%;
-  overflow-y: auto;  
+  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
@@ -39,6 +39,6 @@
 </style>
 <script>
 export default {
-  props: ['content']  
+  props: ['content']
 }
 </script>

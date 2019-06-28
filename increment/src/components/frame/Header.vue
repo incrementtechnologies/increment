@@ -1,6 +1,6 @@
 <template>
     <div class="header-nightsky">
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="#">INCREMENT</a>
                 <div class="navbar-header text-white">
@@ -39,12 +39,11 @@
             </div>
         </nav>
         <Tagline></Tagline>
+        <Container></Container>
     </div>
 </template>
 <style lang="scss" scoped>
-$primary: #3f0050;
-$hover: #ccc;
-$secondary: #22b173;
+@import "~@/styles/colors.scss";
 .hover-white:hover{
   cursor: pointer;
   color: $secondary;
@@ -54,8 +53,7 @@ body {
 }
 
 .header-nightsky {
-    color: white;
-    background:$primary;
+    background:transparent;
     background-size: cover;
     background-position: bottom;
     padding-bottom: 100px;
@@ -73,7 +71,7 @@ body {
     padding-bottom: 20px;
     width: 100%;
     border-bottom:none;
-    background-color: transparent;
+    background-color: $primary;
     min-width: 300px;
     border: none;
 }
@@ -138,6 +136,7 @@ body {
 </style>
 <script>
 import Tagline from '@/components/contents/Tagline.vue'
+import Container from '@/components/frame/Container.vue'
 export default {
   data () {
     return {
@@ -145,7 +144,8 @@ export default {
     }
   },
   components: {
-    Tagline
+    Tagline,
+    Container
   },
   methods: {
     test () {
