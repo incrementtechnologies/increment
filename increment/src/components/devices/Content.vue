@@ -14,11 +14,12 @@
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
+  box-shadow: inset 0 0 5px $tertiary;
   border-radius: 2px;
   margin-top: 20px;
   margin-bottom: 20px;

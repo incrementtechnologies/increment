@@ -12,6 +12,7 @@
     "vue": "vue/dist/vue.common"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {

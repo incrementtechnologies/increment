@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { faCircle } from '@fortawesome/free-regular-svg-icons'
+import { faAndroid } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import '@fortawesome/fontawesome/styles.css'
 import fontawesome from '@fortawesome/fontawesome'
@@ -19,6 +20,7 @@ fontawesome.config = {
 library.add(faUserSecret)
 library.add(faEdit)
 library.add(faCircle)
+library.add(faAndroid)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
