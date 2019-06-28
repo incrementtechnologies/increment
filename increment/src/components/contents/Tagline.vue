@@ -1,7 +1,7 @@
 <template>
   <div class="increment-wrapper-custom">
     <div class="hero">
-      <h1>WE WANT YOU TO SUCCEED</h1>
+      <h1 class="tagline">WE WANT YOU TO SUCCEED</h1>
       <p>
         We create beautiful and secured websites, and mobile applications. Just relax and we will give solutions to your needs. Got something awesome for us to work on?
       </p>
@@ -31,10 +31,9 @@
   left: 5%;
 }
 
-.hero h1 {
+.hero .tagline {
   color: white;
   font-weight: bold;
-  font-size: 48px;
   margin-bottom: 36px;
   padding-top: 50px;
 }
@@ -87,7 +86,7 @@
     margin-bottom: 40px;
   }
 
-  .hero h1{
+  .hero .tagline{
     font-size: 42px;
   }
 }

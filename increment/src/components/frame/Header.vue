@@ -44,6 +44,9 @@
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
+.container{
+    max-width: 96% !important;
+}
 .hover-white:hover{
   cursor: pointer;
   color: $secondary;
@@ -107,7 +110,7 @@ body {
 
 .header-nightsky .navbar-brand {
     color: white;
-    font-size: 50px;
+    font-size: 42px;
     margin-top: 10px;
     margin-bottom: 10px;
 }

@@ -10,6 +10,7 @@
   float: left;
   height: 100%;
   overflow-y: auto;
+  font-size: 90%;
 }
 
 ::-webkit-scrollbar {
