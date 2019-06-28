@@ -3,8 +3,7 @@
     <span v-html="content"></span>
   </div>
 </template>
-<style lang="scss">
-
+<style lang="scss" scoped>
 @import "~@/styles/colors.scss";
 .html-content-holder{
   width: 100%;
