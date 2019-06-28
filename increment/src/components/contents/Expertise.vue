@@ -13,9 +13,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-$primary: #3f0050;
-$hover: #ccc;
-$secondary: #22b173;
+@import "~@/styles/colors.scss";
 .increment-wrapper{
   background: transparent;
   width: 100%;
@@ -31,7 +29,7 @@ $secondary: #22b173;
   left: 0;
   width: 100%;
   height: 60%;
-  background-image: linear-gradient($primary, $secondary);
+  background-image: linear-gradient($primary, $tertiary);
   transform: skewY(-6deg);
   transform-origin: top left;
 }

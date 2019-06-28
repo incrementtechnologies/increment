@@ -2,6 +2,7 @@
   <div class="app-wrapper">
     <Header></Header>
     <Container></Container>
+    <Footer></Footer>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -15,11 +16,13 @@
 </style>
 <script>
 import Header from '@/components/frame/Header.vue'
+import Footer from '@/components/frame/Footer.vue'
 import Container from '@/components/frame/Container.vue'
 export default {
   components: {
     Header,
-    Container
+    Container,
+    Footer
   }
 }
 </script>
