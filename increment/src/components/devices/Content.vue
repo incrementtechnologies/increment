@@ -1,0 +1,44 @@
+<template>
+  <div class="html-content-holder">
+    <span v-html="content"></span>
+  </div>
+</template>
+<style lang="scss">
+
+@import "~@/styles/colors.scss";
+.html-content-holder{
+  width: 100%;
+  float: left;
+  height: 100%;
+  overflow-y: auto;  
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $secondary;
+  border-radius: 10px;
+  height: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $secondary;
+}
+</style>
+<script>
+export default {
+  props: ['content']  
+}
+</script>

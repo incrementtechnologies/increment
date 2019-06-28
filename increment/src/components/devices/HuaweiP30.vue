@@ -4,11 +4,15 @@
     <div class="phone-body">
       <HtmlContent :content="content"></HtmlContent>
     </div>
-    <label class="home-swipe"></label>
+    <label class="home-swipe">
+      <font-awesome-icon icon="caret-left" class="icon"></font-awesome-icon>
+      <font-awesome-icon icon="circle" class="icon"></font-awesome-icon>
+      <font-awesome-icon icon="square" class="icon"></font-awesome-icon>
+    </label>
   </div>
 </template>
 <style lang="scss" scoped>
-$gray: #ccc;
+@import "~@/styles/colors.scss";
 .phone-wrapper{
   width: 100%;
   height: 100%;
@@ -29,22 +33,30 @@ $gray: #ccc;
 .speaker{
   background: black;
   height: 25px;
-  width: 60%;
-  margin-left: 20%;
+  width: 10%;
+  margin-left: 45%;
   position: absolute;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
 .home-swipe{
-  height: 5px;
-  width: 30%;
-  bottom: 10px;
-  background: #555;
-  border-radius: 2px;
+  height: 35px;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  bottom: 0px;
+  background: white;
+  border-top: solid 1px $gray;
   position: absolute;
-  right: 35%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
 }
-
+.home-swipe .icon{
+  font-size: 16px;
+  width: 20%;
+  margin-top: 10px;
+}
 </style>
 <script>
 import HtmlContent from '@/components/devices/Content.vue'

@@ -7,7 +7,7 @@
       <label class="speaker"></label>
     </div>
     <div class="phone-body">
-      <span v-html="content" class="content"></span>
+      <HtmlContent :content="content"></HtmlContent>
     </div>
   </div>
 </template>
@@ -52,7 +52,11 @@ $gray: #ccc;
 
 </style>
 <script>
+import HtmlContent from '@/components/devices/Content.vue'
 export default {
-  props: ['content']
+  props: ['content'],
+  components: {
+    HtmlContent
+  }
 }
 </script>

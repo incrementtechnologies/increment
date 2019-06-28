@@ -7,7 +7,7 @@
       <label class="speaker"></label>
     </div>
     <div class="phone-body">
-      <span v-html="content"></span>
+      <HtmlContent :content="content"></HtmlContent>
     </div>
     <div class="phone-footer">
       <label class="home-btn"></label>
@@ -63,6 +63,7 @@ $gray: #ccc;
   border: solid 2px gold;
 }
 .phone-body{
+  overflow-y: auto;
   width: 98%;
   float: left;
   height: 80%;
@@ -73,7 +74,11 @@ $gray: #ccc;
 }
 </style>
 <script>
+import HtmlContent from '@/components/devices/Content.vue'
 export default {
-  props: ['content']
+  props: ['content'],
+  components: {
+    HtmlContent
+  }
 }
 </script>

@@ -61,11 +61,14 @@ $secondary: #22b173;
 <script>
 import IPhone from '@/components/devices/IPhone.vue'
 import IPhoneX from '@/components/devices/IPhoneX.vue'
-import Android from '@/components/devices/Android.vue'
+import Android from '@/components/devices/HuaweiP30.vue'
+let header = '<h1 class=text-center>WE WANT YOU TO SUCCEED</h1>'
+let p = '<p class=text-center>We create beautiful and secured websites, and mobile applications. Just relax and we will give solutions to your needs. Got something awesome for us to work on?</p>'
+let btn = '<div class=text-center><div class="btn btn-primary">GET QUOTE NOW!</div></div>'
 export default {
   data () {
     return {
-      iPhoneContent: '<h1 class=text-center>Welcome to Increment</h1>'
+      iPhoneContent: header + p + btn + btn + header + p + btn + btn
     }
   },
   components: {
@@ -75,4 +78,3 @@ export default {
   }
 }
 </script>
-

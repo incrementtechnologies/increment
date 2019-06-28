@@ -1,7 +1,7 @@
 {
   "name": "increment",
   "version": "1.0.0",
-  "description": "\"Landing page\"\"",
+  "description": "Landing page",
   "author": "kennCK <kennettecanales@gmail.com>",
   "private": true,
   "scripts": {
@@ -65,6 +65,7 @@
     "sass-loader": "^7.1.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "style-resources-loader": "^1.2.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",
