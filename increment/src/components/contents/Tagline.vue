@@ -73,6 +73,7 @@
   min-height: 100px;
   overflow-y: hidden;
   margin-top: 75px;
+  margin-bottom: 25px;
 }
 .desktop{
   width: 70%;

@@ -57,8 +57,8 @@
   background-color: $primary;
   border-color: #fffbfb !important;
   outline:none;
-  height: 50px;
   font-size: 24px;
+  padding: 18px 24px;
   transition:0.2s background-color;
 }
 
