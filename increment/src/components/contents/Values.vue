@@ -1,6 +1,6 @@
 <template>
-  <div class="increment-wrapper" style="height: 80vh">
-    <div class="bg-text">our values</div>
+  <div class="increment-wrapper">
+    <h1 class="bg-text">our values</h1>
     <div class="values-container">
       <span class="list-holder" v-for="(item, index) in list" :key="index">
         <label class="number">{{index + 1}}</label>
@@ -14,6 +14,8 @@
 .increment-wrapper{
   background: $secondary;
   position: relative;
+  height: 80vh;
+  min-height: 0;
 }
 .bg-text{
   position: absolute;
@@ -29,9 +31,9 @@
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  height: 80vh;
+  height: 100%;
   position: absolute;
-  top: 20vh;
+  top: 30vh;
   z-index: 1;
 }
 .list-holder{
@@ -53,10 +55,35 @@
   float: left;
 }
 @media (max-width: 992px) {
+  .increment-wrapper{
+    min-height: 100vh;
+    height: auto;
+  }
+  .values-container{
+    position: initial;
+    float: left;
+    margin-bottom: 50px;
+  }
   .values-container, .list-holder{
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
+  }
+  .bg-text{
+    width: 100%;
+    top: 0px;
+    text-align: center;
+    font-size: 2.5rem;
+    left: 0px;
+    text-transform: Capitalize;
+    opacity: 1;
+    margin-top: 50px;
+    position: initial;
+    float: left;
+  }
+  .list-holder{
+    height: auto;
+    padding: 10px 0px;
   }
 }
 </style>

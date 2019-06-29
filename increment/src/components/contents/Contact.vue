@@ -45,6 +45,13 @@
   width: 100%;
   float: left;
 }
+.buttons{
+  width: 100%;
+  float: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .btn-primary {
   color: #fff;
   background-color: $primary;
@@ -61,11 +68,7 @@
 .btn-primary:active {
   transform:translateY(1px);
 }
-.buttons{
-  width: 100%;
-  float: left;
-  margin-top: 50px;
-}
+
 .form-control{
   min-height: 50px !important;
 }

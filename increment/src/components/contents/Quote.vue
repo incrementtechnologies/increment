@@ -64,6 +64,7 @@
   width: 100%;
   float: left;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 @media (max-width: 992px) {
   .platform-container, .rectangle{

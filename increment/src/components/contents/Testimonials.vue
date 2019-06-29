@@ -1,14 +1,16 @@
 <template>
   <div class="increment-wrapper">
-    <h1 class="text-center increment-title" style="margin-top: 50px;">We are very happy seeing our clients happy</h1>
+    <h1 class="text-center increment-title">What they say to us!</h1>
+    <h3 class="text-center">We are very happy seeing our clients happy</h3>
     <div class="platform-container">
-      <div class="text-center">
+      <div class="text-center message-holder" v-for="(item, index) in testimonials" :key="index">
         <h1>
-          <font-awesome-icon icon="quote-left"></font-awesome-icon>
+          <font-awesome-icon icon="quote-left" class=""></font-awesome-icon>
         </h1>
-        <h2>
-          They are very creative and give really provide solutions to our accounting and payroll.
-        </h2>
+        <p><i>{{item.message}}</i></p>
+        <h6><b>{{item.name}}</b></h6>
+        <label>{{item.position}}</label>
+        <label>{{item.country}}</label>
       </div>
     </div>
   </div>
@@ -18,20 +20,58 @@
 .platform-container{
   width: 100%;
   float: left;
+  margin-top: 100px;
+}
+.increment-title{
+  margin-top: 100px;
+}
+.message-holder{
+  float: left;
+  height: auto;
+  border-radius: 20px;
+  border: solid 1px $secondary;
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 50px;
+}
+.message-holder h1{
+  color: $tertiary;
+  margin-top: -25px;
+}
+.message-holder p{
+  padding: 0px 10px;
+}
+.message-holder label{
+  width: 100%;
+  float: left;
 }
 @media (max-width: 992px) {
+  .platform-container{
+    margin-top: 50px;
+  }
+  .message-holder{
+    width: 90%;
+  }
+  .increment-title{
+    margin-top: 50px;
+  }
 }
 </style>
 <script>
 export default {
   data () {
     return {
-      platforms: [{
-        icon: 'desktop', title: 'Android'
+      testimonials: [{
+        message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        name: 'Shannen Tan',
+        country: 'Philippines',
+        position: 'President and CEO, Mezzo Hotel'
       }, {
-        icon: 'desktop', title: 'Apple, IoS'
-      }, {
-        icon: 'desktop', title: 'Web'
+        message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        name: 'Jeremy Reid',
+        country: 'Australia',
+        position: 'Owner, TalkFluent'
       }]
     }
   }

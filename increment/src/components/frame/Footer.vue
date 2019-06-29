@@ -10,10 +10,12 @@
 @import "~@/styles/colors.scss";
 footer{
   background: $primary;
-  height: 40vh;
+  min-height: 40vh;
+  padding: 0px 10px;
+  overflow-y: hidden;
 }
 h1{
-  padding-top: 10vh;
+  padding-top: 50px;
 }
 p{
   color: rgba(255, 255, 255, 0.6);
@@ -22,6 +24,16 @@ p{
   margin: 0 auto 20px;
   font-weight: normal;
   line-height: 1.5;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 992px) {
+  h1{
+    font-size: 1.5rem;
+  }
+  p{
+    font-size: 18px;
+  }
 }
 </style>
 <script>

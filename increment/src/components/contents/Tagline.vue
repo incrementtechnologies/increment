@@ -8,27 +8,29 @@
       <div class="btn btn-primary">GET QUOTE NOW!</div>
     </div>
     <div class="devices">
-      <Desktop :content="iPhoneContent"></Desktop>
+
+      <span class="android">
+        <Android :content="iPhoneContent"></Android>
+      </span>
+      <div class="desktop">
+        <Desktop :content="iPhoneContent"></Desktop>
+      </div>
     </div>
 
-    <span class="android">
-      <Android :content="iPhoneContent"></Android>
-    </span>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
 .increment-wrapper-custom {
-  height: 80vh;
-  position: relative;
+  min-height: 80vh;
   background-color: $primary;
+  overflow-y: hidden;
 }
 .hero {
   margin-bottom: 100px;
-  z-index: 1;
-  position: absolute;
-  width: 90%;
-  left: 5%;
+  width: 50%;
+  float: left;
+  padding-left: 4%;
 }
 
 .hero .tagline {
@@ -66,28 +68,56 @@
 }
 
 .devices{
-  width: 30%;
-  height: 250px;
-  position: absolute;
-  right: 1%;
-  bottom: 100px;
-  z-index: 0;
+  float: left;
+  width: 50%;
+  min-height: 100px;
+  overflow-y: hidden;
+  margin-top: 75px;
+}
+.desktop{
+  width: 70%;
+  height: 300px;
+  position: relative;
+  float: left;
+  margin-top: 100px;
 }
 .android{
-  height: 300px;
-  width: 160px;
-  position: absolute;
-  right: 30%;
-  bottom: 100px;
+  height: 400px;
+  width: 30%;
+  position: relative;
+  float: left;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 992px) {
+
   .hero{
     margin-top: 40px;
     margin-bottom: 40px;
+    width: 100%;
+    margin: 40px 0%;
+    float: left;
+    padding: 0% 2%;
+    text-align: center;
   }
 
   .hero .tagline{
     font-size: 42px;
+  }
+
+  .devices{
+    width: 98%;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  .desktop{
+    width: 90%;
+    height: 250px;
+    margin-top: 0px;
+    margin-left: 5%;
+  }
+  .android{
+    display: none;
   }
 }
 </style>

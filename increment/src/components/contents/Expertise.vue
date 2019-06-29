@@ -1,7 +1,7 @@
 <template>
   <div class="increment-wrapper">
     <span class="wrapper-bg"></span>
-    <span class="phone">
+<!--     <span class="phone">
       <IPhone :content="iPhoneContent"></IPhone>
     </span>
     <span class="phoneX">
@@ -9,17 +9,13 @@
     </span>
     <span class="android">
       <Android :content="iPhoneContent"></Android>
-    </span>
+    </span> -->
   </div>
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
 .increment-wrapper{
   background: transparent;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
 }
 .wrapper-bg{
   position: absolute;
@@ -29,8 +25,6 @@
   left: 0;
   width: 100%;
   height: 60%;
-  background-image: linear-gradient($primary, $tertiary);
-  transform: skewY(-6deg);
   transform-origin: top left;
 }
 .phone{
@@ -39,6 +33,7 @@
   position: absolute;
   left: 5%;
   top: 25px;
+  margin-bottom: 50px;
 }
 .phoneX{
   height: 550px;
@@ -46,6 +41,7 @@
   position: absolute;
   left: 30%;
   top: 25px;
+  margin-bottom: 50px;
 }
 
 .android{
@@ -54,6 +50,13 @@
   position: absolute;
   left: 60%;
   top: 25px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 992px) {
+  .android, .phoneX{
+    display: none;
+  }
 }
 </style>
 <script>

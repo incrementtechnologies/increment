@@ -1,11 +1,11 @@
 <template>
     <div class="header-nightsky">
-        <nav class="navbar navbar-default sticky-top">
+        <nav class="navbar navbar-default">
             <div class="container">
                 <a class="navbar-brand" href="#">INCREMENT</a>
                 <div class="navbar-header text-white">
-                  <font-awesome-icon icon="bars" style="font-size: 42px;" class="navbar-toggle hover-white" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = true" v-if="barFlag === false"></font-awesome-icon>
-                  <font-awesome-icon icon="times" style="font-size: 42px;" class="navbar-toggle hover-white" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = false" v-else></font-awesome-icon>
+                  <font-awesome-icon icon="bars" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = true" v-if="barFlag === false"></font-awesome-icon>
+                  <font-awesome-icon icon="times" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = false" v-else></font-awesome-icon>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -46,6 +46,8 @@
 @import "~@/styles/colors.scss";
 .container{
     max-width: 96% !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 .hover-white:hover{
   cursor: pointer;
@@ -118,6 +120,9 @@ body {
 .header-nightsky .navbar-brand:hover {
     color: #ccc;
 }
+.menu-icon{
+    font-size: 42px;
+}
 
 @media screen and (max-width: 767px) {
 
@@ -134,6 +139,15 @@ body {
     margin-left: 20px;
     border-top: none;
     box-shadow: none;
+  }
+  .header-nightsky .navbar-brand{
+    font-size: 32px;
+  }
+  .container{
+    max-width: 98% !important;
+  }
+  .menu-icon{
+   font-size: 32px;
   }
 }
 </style>
