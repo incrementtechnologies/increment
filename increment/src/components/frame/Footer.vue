@@ -9,7 +9,7 @@
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
 footer{
-  background: $primary;
+  background: $secondary;
   min-height: 40vh;
   padding: 0px 10px;
   overflow-y: hidden;

@@ -59,7 +59,7 @@
 
 .btn-primary {
   color: #fff;
-  background-color: $primary;
+  background-color: $secondary;
   border-color: #fffbfb !important;
   outline:none;
   font-size: 24px;

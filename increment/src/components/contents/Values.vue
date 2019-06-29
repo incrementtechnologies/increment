@@ -92,15 +92,15 @@ export default {
   data () {
     return {
       list: [{
-        title: 'We do the right thing.'
+        title: 'We do the right thing. Always.'
       }, {
-        title: 'We always communicate.'
+        title: 'We provide what is best always.'
       }, {
-        title: 'We always ask what is unclear.'
+        title: 'We are committed to everything we do.'
       }, {
         title: 'We build a successful relationship.'
       }, {
-        title: 'We argued what is best always.'
+        title: 'Communication is our tool for excellence.'
       }, {
         title: 'We always help everyone.'
       }]

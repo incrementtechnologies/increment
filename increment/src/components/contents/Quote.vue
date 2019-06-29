@@ -43,7 +43,7 @@
 }
 .btn-primary {
   color: #fff;
-  background-color: transparent;
+  background-color: $secondary;
   border-color: #fffbfb !important;
   outline:none;
   margin-right: 20px;
@@ -54,12 +54,9 @@
 }
 
 .btn-primary:hover {
-  background-color:rgba(255,255,255,0.1);
+  cursor: pointer;
 }
 
-.btn-primary:active {
-  transform:translateY(1px);
-}
 .buttons{
   width: 100%;
   float: left;

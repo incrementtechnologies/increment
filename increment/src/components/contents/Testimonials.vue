@@ -9,8 +9,8 @@
         </h1>
         <p><i>{{item.message}}</i></p>
         <h6><b>{{item.name}}</b></h6>
-        <label>{{item.position}}</label>
-        <label>{{item.country}}</label>
+        <label class="gray"><b>{{item.position}}</b></label>
+        <label class="gray">{{item.country}}</label>
       </div>
     </div>
   </div>
@@ -21,6 +21,7 @@
   width: 100%;
   float: left;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 .increment-title{
   margin-top: 100px;
@@ -45,6 +46,9 @@
 .message-holder label{
   width: 100%;
   float: left;
+}
+.gray{
+  color: gray;
 }
 @media (max-width: 992px) {
   .platform-container{
