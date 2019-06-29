@@ -4,35 +4,13 @@
             <div class="container">
                 <a class="navbar-brand" href="#">INCREMENT</a>
                 <div class="navbar-header text-white">
-                  <font-awesome-icon icon="bars" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = true" v-if="barFlag === false"></font-awesome-icon>
-                  <font-awesome-icon icon="times" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = false" v-else></font-awesome-icon>
+                  <font-awesome-icon icon="bars" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="show(true)" v-if="barFlag === false"></font-awesome-icon>
+                  <font-awesome-icon icon="times" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="show(false)" v-else></font-awesome-icon>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">HOME</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">NEWS <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">DEMOS<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
+                        <li v-for="(item, index) in menus" :key="index">
+                            <a :href="item.payload">{{item.title}}</a>
                         </li>
                     </ul>
                 </div>
@@ -116,6 +94,32 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.header-nightsky .navbar-collapse {
+    border-top: none;
+    box-shadow: none;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 100px;
+    position: absolute;
+}
+
+.header-nightsky .nav{
+    width: 100%;
+    font-size: 2.2rem;
+    background: $primary;
+}
+
+.header-nightsky .nav li{
+    width: 100%;
+    float: left;
+    padding-left: 5%;
+}
+.header-nightsky .nav li:hover{
+    color: $tertiary !important;
+}
 
 .header-nightsky .navbar-brand:hover {
     color: #ccc;
@@ -123,6 +127,7 @@ body {
 .menu-icon{
     font-size: 42px;
 }
+
 
 @media screen and (max-width: 767px) {
 
@@ -135,11 +140,6 @@ body {
     color: $hover;
   }
 
-  .header-nightsky .navbar-collapse {
-    margin-left: 20px;
-    border-top: none;
-    box-shadow: none;
-  }
   .header-nightsky .navbar-brand{
     font-size: 32px;
   }
@@ -157,7 +157,22 @@ import Container from '@/components/frame/Container.vue'
 export default {
   data () {
     return {
-      barFlag: false
+      barFlag: false,
+      menus: [{
+        title: 'HOME', payload: ''
+      }, {
+        title: 'SERVICES', payload: ''
+      }, {
+        title: 'PROCESS', payload: ''
+      }, {
+        title: 'VALUES', payload: ''
+      }, {
+        title: 'TESTIMONIALS', payload: ''
+      }, {
+        title: 'QUOTATION', payload: ''
+      }, {
+        title: 'CONTACT US', payload: ''
+      }]
     }
   },
   components: {
@@ -165,7 +180,13 @@ export default {
     Container
   },
   methods: {
-    test () {
+    show (flag) {
+        this.barFlag = flag
+        // if(flag === false){
+        //     $('.navbar-collapse').collapse('hide')
+        // }else{
+        //     $('.navbar-collapse').collapse('show')
+        // }
     }
   }
 }

@@ -94,11 +94,11 @@ export default {
       list: [{
         title: 'We do the right thing. Always.'
       }, {
-        title: 'We provide what is best always.'
+        title: 'We provide what is best.'
       }, {
         title: 'We are committed to everything we do.'
       }, {
-        title: 'We build a successful relationship.'
+        title: 'We deliver success to our customers.'
       }, {
         title: 'Communication is our tool for excellence.'
       }, {
