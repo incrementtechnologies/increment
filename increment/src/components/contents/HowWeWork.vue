@@ -1,6 +1,6 @@
 <template>
   <div class="increment-wrapper">
-    <h1 class="text-center increment-title">Here's how we work from your projects from start to finish</h1>
+    <h1 class="text-center increment-title text-tertiary">Here's how we work, from your projects, from start to finish</h1>
     <div class="wrapper-container">
       <span v-for="(item, index) in data" :key="index">
         <label><b>{{item.title}}</b></label>
@@ -20,6 +20,7 @@
 }
 h1{
   padding: 0px 10%;
+  margin-top: 50px;
 }
 
 .wrapper-container label{

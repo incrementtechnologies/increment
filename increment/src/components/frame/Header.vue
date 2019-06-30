@@ -128,7 +128,6 @@ body {
     font-size: 42px;
 }
 
-
 @media screen and (max-width: 767px) {
 
   .header-nightsky .navbar-default .navbar-nav .open .dropdown-menu>li>a{
@@ -181,12 +180,12 @@ export default {
   },
   methods: {
     show (flag) {
-        this.barFlag = flag
-        // if(flag === false){
-        //     $('.navbar-collapse').collapse('hide')
-        // }else{
-        //     $('.navbar-collapse').collapse('show')
-        // }
+      this.barFlag = flag
+      // if (flag === false) {
+      //     $('.navbar-collapse').collapse('hide')
+      // } else {
+      //     $('.navbar-collapse').collapse('show')
+      // }
     }
   }
 }

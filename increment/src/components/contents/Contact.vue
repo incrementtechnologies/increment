@@ -1,6 +1,6 @@
 <template>
   <div class="increment-wrapper">
-    <h1 class="text-center" style="margin-top: 50px;">Contact Us</h1>
+    <h1 class="text-center text-primary" style="margin-top: 50px;">Contact Us</h1>
     <div class="platform-container">
       <label v-if="validationFlag === true" class="text-danger">Opps! All fields are required.</label>
       <br>
@@ -69,7 +69,7 @@
 
 .btn-primary:hover{
   cursor: pointer;
-} 
+}
 .btn-primary:active {
   transform:translateY(1px);
 }
@@ -106,30 +106,30 @@ export default {
     }
   },
   methods: {
-    emailInput(event){
+    emailInput (event) {
       this.contact.email = event.target.value
       this.validateEmail()
     },
-    validateEmail(){
+    validateEmail () {
       let reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+.[a-zA-Z0-9]*$/
-      if(reg.test(this.contact.email) === false){
+      if (reg.test(this.contact.email) === false) {
         this.emailErrorFlag = true
         return false
-      }else{
+      } else {
         this.emailErrorFlag = false
         return true
       }
     },
-    submit(){
-      if(this.validateEmail() === false){
+    submit () {
+      if (this.validateEmail() === false) {
         this.validationFlag = true
       }
-      if((this.contact.full_name !== null && this.contact.full_name.length < 5) || this.contact.full_name === null){
+      if ((this.contact.full_name !== null && this.contact.full_name.length < 5) || this.contact.full_name === null) {
         this.validationFlag = true
       }
-      if((this.contact.details !== null && this.contact.details.length < 5) || this.contact.details === null){
+      if ((this.contact.details !== null && this.contact.details.length < 5) || this.contact.details === null) {
         this.validationFlag = true
-      }else{
+      } else {
         this.validationFlag = false
       }
     }

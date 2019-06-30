@@ -1,14 +1,14 @@
 <template>
   <div class="increment-wrapper">
-    <h1 class="text-center increment-title">What they say to us!</h1>
-    <h3 class="text-center">We are very happy seeing our clients happy</h3>
+    <h1 class="text-center increment-title text-secondary">What they say to us!</h1>
+    <h3 class="text-center text-tertiary">We are very happy seeing our clients happy</h3>
     <div class="platform-container">
       <div class="text-center message-holder" v-for="(item, index) in testimonials" :key="index">
         <h1>
           <font-awesome-icon icon="quote-left" class=""></font-awesome-icon>
         </h1>
         <p><i>{{item.message}}</i></p>
-        <h6><b>{{item.name}}</b></h6>
+        <h6 class="text-primary"><b>{{item.name}}</b></h6>
         <label class="gray"><b>{{item.position}}</b></label>
         <label class="gray">{{item.country}}</label>
       </div>

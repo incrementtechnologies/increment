@@ -39,7 +39,6 @@
 }
 .platform-item{
   width: 100%;
-  float: left;
 }
 .btn-primary {
   color: #fff;

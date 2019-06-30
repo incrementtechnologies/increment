@@ -1,6 +1,7 @@
 <template>
   <div class="increment-wrapper">
-    <h1 class="text-center increment-title">What we can offer?</h1>
+    <h1 class="text-center increment-title text-secondary">What we can offer?</h1>
+    <h2 class="text-center text-primary">Our Services</h2>
     <div class="wrapper-container">
       <span v-for="(item, index) in data" :key="index" class="wrapper-menu" v-bind:class="{'active-menu': activeIndex === index}" @click="setActive(item, index)">
         <font-awesome-icon :icon="item.icon" class="icon" v-if="item.icon !== null"></font-awesome-icon>
@@ -112,7 +113,7 @@ h1{
 </style>
 <script>
 export default {
-  mounted(){
+  mounted () {
     this.activeItem = this.data[0]
   },
   data () {
@@ -124,7 +125,7 @@ export default {
       }, {
         icon: 'mobile-alt',
         title: 'APPS',
-        description: 'The development framework react-native and quasar-vuejs are capable to deploy applications for android and ios platforms. We build using its native programming framework once our customer demands it. Our developers are always working in advanced for us to give best solutions always.'
+        description: 'The development framework react-native and quasar-vuejs are capable to deploy applications for android and ios platforms. We build using its native programming framework once our customer demands it. Our developers are always working in advanced for us to give best solutions.'
       }, {
         icon: 'desktop',
         title: 'WEBSITES',
@@ -139,7 +140,7 @@ export default {
     }
   },
   methods: {
-    setActive(item, index){
+    setActive (item, index) {
       this.activeItem = item
       this.activeIndex = index
     }
