@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper" v-bind:class="{'one': activeIndex === 1, 'two': activeIndex === 2, 'three': activeIndex === 3}">
+  <div class="increment-wrapper" id="products" v-bind:class="{'one': activeIndex === 1, 'two': activeIndex === 2, 'three': activeIndex === 3}">
     <h1 class="text-center increment-title text-primary">What we provide?</h1>
     <h2 class="text-center text-secondary">Our Products</h2>
     <div class="platform-container">
@@ -12,15 +12,17 @@
               <p class="text-white"><i>{{item.description}}</i></p>
             </div>
             <div class="text-center">
-              <button class="btn btn-primary" style="margin-top: 25px;">Learn more</button>
+              <a :href="item.website" target="_BLANK">
+                <button class="btn btn-primary" style="margin-top: 25px;">Learn more</button>
+              </a>
             </div>
           </span>
           <span class="details devices">
             <span class="right" v-if="item.align === 'left'">
-              <IPhoneX></IPhoneX>
+              <IPhoneX :content="item.website"></IPhoneX>
             </span>
             <span class="left" v-if="item.align === 'right'">
-              <IPhoneX></IPhoneX>
+              <IPhoneX :content="item.website"></IPhoneX>
             </span>
           </span>
           <span class="details" v-if="item.align === 'right'">
@@ -30,7 +32,9 @@
               <p class="text-white"><i>{{item.description}}</i></p>
             </div>
             <div class="text-center">
-              <button class="btn btn-primary" style="margin-top: 25px;">Learn more</button>
+              <a :href="item.website" target="_BLANK">
+                <button class="btn btn-primary" style="margin-top: 25px;">Learn more</button>
+              </a>
             </div>
           </span>
         </div>
@@ -172,11 +176,20 @@
 <script>
 import IPhoneX from '@/components/devices/IPhoneX.vue'
 export default {
+  mounted () {
+    setInterval(() => {
+      if (this.forwardFlag === true) {
+        this.next()
+      } else {
+        this.previous()
+      }
+    }, 4000)
+  },
   data () {
     return {
       products: [{
         tagline: 'Connecting you to nearby printing.',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        description: 'PaPrint lets you design and create custom professional-looking printing templates. Connecting to printing partners a lot easier.',
         logo: null,
         app: 'PaPrint',
         url: null,
@@ -184,7 +197,7 @@ export default {
         website: 'http://idfactory.ph'
       }, {
         tagline: 'Quick Loans. Transparent Investment.',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        description: 'Making small amount of loans processes a lot easier. Want to make an investment also? PayHiram provides you a tool for investment with transparent transactions.',
         logo: null,
         app: 'PayHiram',
         url: null,
@@ -192,14 +205,15 @@ export default {
         website: 'http://payhiram.com'
       }, {
         tagline: 'Making a customizable messenger bot.',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        description: 'We build customize chatbot application for facebook messenger, whatsapp and more.',
         logo: null,
         app: 'iLinya',
         url: null,
         align: 'left',
         website: 'http://ilinya.com'
       }],
-      activeIndex: 1
+      activeIndex: 1,
+      forwardFlag: true
     }
   },
   components: {
@@ -207,13 +221,19 @@ export default {
   },
   methods: {
     previous () {
-      if (this.activeIndex > 0) {
+      if (this.activeIndex > 1) {
         this.activeIndex--
+        this.forwardFlag = false
+      } else {
+        this.forwardFlag = true
       }
     },
     next () {
       if (this.activeIndex < this.products.length) {
         this.activeIndex++
+        this.forwardFlag = true
+      } else {
+        this.forwardFlag = false
       }
     }
   }

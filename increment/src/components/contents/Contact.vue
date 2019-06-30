@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper">
+  <div class="increment-wrapper" id="contact-us">
     <h1 class="text-center text-primary" style="margin-top: 50px;">Contact Us</h1>
     <div class="platform-container">
       <label v-if="validationFlag === true" class="text-danger">Opps! All fields are required.</label>

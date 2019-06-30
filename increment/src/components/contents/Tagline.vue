@@ -10,10 +10,10 @@
     <div class="devices">
 
       <span class="android">
-        <Android :content="iPhoneContent"></Android>
+        <Android :content="'http://increment.ltd'"></Android>
       </span>
       <div class="desktop">
-        <Desktop :content="iPhoneContent"></Desktop>
+        <Desktop :content="'http://increment.ltd'"></Desktop>
       </div>
     </div>
 

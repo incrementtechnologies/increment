@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper text-white">
+  <div class="increment-wrapper text-white" id="quotation">
     <h3 class="text-center" style="margin-top: 50px;">GET QUOTE</h3>
     <h1 class="text-center">Choose your platform(s)</h1>
     <div class="platform-container">

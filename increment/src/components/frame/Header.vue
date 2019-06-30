@@ -1,16 +1,16 @@
 <template>
-    <div class="header-nightsky">
+    <div class="header-nightsky" id="home">
         <nav class="navbar navbar-default">
             <div class="container">
                 <a class="navbar-brand" href="#">INCREMENT</a>
                 <div class="navbar-header text-white">
-                  <font-awesome-icon icon="bars" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="show(true)" v-if="barFlag === false"></font-awesome-icon>
-                  <font-awesome-icon icon="times" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="show(false)" v-else></font-awesome-icon>
+                  <font-awesome-icon icon="bars" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = true" v-if="barFlag === false"></font-awesome-icon>
+                  <font-awesome-icon icon="times" class="navbar-toggle hover-white menu-icon" data-toggle="collapse" data-target="#myNavbar" @click="barFlag = false" v-if="barFlag === true"></font-awesome-icon>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li v-for="(item, index) in menus" :key="index">
-                            <a :href="item.payload">{{item.title}}</a>
+                            <a @click="scrollTo(item.payload)" data-toggle="collapse" data-target="#myNavbar">{{item.title}}</a>
                         </li>
                     </ul>
                 </div>
@@ -153,24 +153,25 @@ body {
 <script>
 import Tagline from '@/components/contents/Tagline.vue'
 import Container from '@/components/frame/Container.vue'
+import Jquery from 'jquery'
 export default {
   data () {
     return {
       barFlag: false,
       menus: [{
-        title: 'HOME', payload: ''
+        title: 'HOME', payload: '#home'
       }, {
-        title: 'SERVICES', payload: ''
+        title: 'SERVICES', payload: '#services'
       }, {
-        title: 'PROCESS', payload: ''
+        title: 'PROCESS', payload: '#process'
       }, {
-        title: 'VALUES', payload: ''
+        title: 'VALUES', payload: '#products'
       }, {
-        title: 'TESTIMONIALS', payload: ''
+        title: 'TESTIMONIALS', payload: '#testimonials'
       }, {
-        title: 'QUOTATION', payload: ''
+        title: 'QUOTATION', payload: '#quotation'
       }, {
-        title: 'CONTACT US', payload: ''
+        title: 'CONTACT US', payload: '#contact-us'
       }]
     }
   },
@@ -179,13 +180,11 @@ export default {
     Container
   },
   methods: {
-    show (flag) {
-      this.barFlag = flag
-      // if (flag === false) {
-      //     $('.navbar-collapse').collapse('hide')
-      // } else {
-      //     $('.navbar-collapse').collapse('show')
-      // }
+    scrollTo (div) {
+      this.barFlag = false
+      Jquery('html, body').animate({
+        scrollTop: Jquery(div).offset().top
+      }, 1000)
     }
   }
 }

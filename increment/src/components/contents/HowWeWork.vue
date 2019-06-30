@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper">
+  <div class="increment-wrapper" id="process">
     <h1 class="text-center increment-title text-tertiary">Here's how we work, from your projects, from start to finish</h1>
     <div class="wrapper-container">
       <span v-for="(item, index) in data" :key="index">

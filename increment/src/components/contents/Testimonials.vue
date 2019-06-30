@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper">
+  <div class="increment-wrapper" id="testimonials">
     <h1 class="text-center increment-title text-secondary">What they say to us!</h1>
     <h3 class="text-center text-tertiary">We are very happy seeing our clients happy</h3>
     <div class="platform-container">

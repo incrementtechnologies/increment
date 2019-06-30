@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper">
+  <div class="increment-wrapper" id="services">
     <h1 class="text-center increment-title text-secondary">What we can offer?</h1>
     <h2 class="text-center text-primary">Our Services</h2>
     <div class="wrapper-container">
