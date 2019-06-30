@@ -128,6 +128,11 @@ body {
     font-size: 42px;
 }
 
+.header-nightsky .nav li a:hover{
+  cursor: pointer;
+  color: $tertiary;
+  text-decoration: underline;
+}
 @media screen and (max-width: 767px) {
 
   .header-nightsky .navbar-default .navbar-nav .open .dropdown-menu>li>a{
@@ -163,9 +168,11 @@ export default {
       }, {
         title: 'SERVICES', payload: '#services'
       }, {
+        title: 'PRODUCTS', payload: '#products'
+      }, {
         title: 'PROCESS', payload: '#process'
       }, {
-        title: 'VALUES', payload: '#products'
+        title: 'VALUES', payload: '#values'
       }, {
         title: 'TESTIMONIALS', payload: '#testimonials'
       }, {

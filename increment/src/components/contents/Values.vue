@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper">
+  <div class="increment-wrapper" id="values">
     <h1 class="bg-text">our values</h1>
     <div class="values-container">
       <span class="list-holder" v-for="(item, index) in list" :key="index">
