@@ -5,7 +5,7 @@
       <p>
         We create beautiful and secured websites, and mobile applications. Just relax and we will give solutions to your needs. Got something awesome for us to work on?
       </p>
-      <div class="btn btn-primary">GET QUOTE NOW!</div>
+      <div class="btn btn-primary" @click="scroll()">GET QUOTE NOW!</div>
     </div>
     <div class="devices">
 
@@ -137,6 +137,11 @@ export default {
   components: {
     Desktop,
     Android
+  },
+  methods: {
+    scroll () {
+      this.$emit('scrollToEvent', '#quotation')
+    }
   }
 }
 </script>

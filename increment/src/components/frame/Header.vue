@@ -16,7 +16,7 @@
                 </div>
             </div>
         </nav>
-        <Tagline></Tagline>
+        <Tagline @scrollToEvent="scrollTo($event)"></Tagline>
         <Container></Container>
     </div>
 </template>
