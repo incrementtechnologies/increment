@@ -18,12 +18,12 @@
             </div>
           </span>
           <span class="details devices">
-            <span class="right" v-if="item.align === 'left'">
+<!--             <span class="right" v-if="item.align === 'left'">
               <IPhoneX :content="item.website"></IPhoneX>
             </span>
             <span class="left" v-if="item.align === 'right'">
               <IPhoneX :content="item.website"></IPhoneX>
-            </span>
+            </span> -->
           </span>
           <span class="details" v-if="item.align === 'right'">
             <div class="description">

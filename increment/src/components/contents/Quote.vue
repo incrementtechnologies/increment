@@ -2,14 +2,15 @@
   <div class="increment-wrapper text-white" id="quotation">
     <h3 class="text-center" style="margin-top: 50px;">GET QUOTE</h3>
     <h1 class="text-center">Choose your platform(s)</h1>
-    <div class="platform-container">
-      <span v-for="(item, index) in platforms" :key="index" class="rectangle">
+    <div class="platform-container" v-if="activeStep === 1">
+      <span v-for="(item, index) in platforms" :key="index" class="rectangle" v-bind:class="{'selected': item.selected === true}" @click="select(index)">
         <font-awesome-icon :icon="item.icon" class="platform-item" style="margin-top: 40px;font-size: 48px;"></font-awesome-icon>
         <label class="platform-item" style="font-size: 18px; margin-top: 5px;">{{item.title}}</label>
       </span>
     </div>
     <div class="text-center buttons">
-      <div class="btn btn-primary">CONTINUE</div>
+      <div class="btn btn-primary" v-if="activeStep > 1" @click="previous()">BACK</div>
+      <div class="btn btn-primary" @click="next()">CONTINUE</div>
     </div>
   </div>
 </template>
@@ -32,6 +33,9 @@
 }
 .rectangle:hover{
   cursor: pointer;
+  background: $secondary;
+}
+.selected{
   background: $secondary;
 }
 .increment-wrapper{
@@ -76,12 +80,31 @@ export default {
   data () {
     return {
       platforms: [{
-        icon: 'desktop', title: 'Android'
+        icon: 'desktop', title: 'Android', selected: false
       }, {
-        icon: 'desktop', title: 'Apple, IoS'
+        icon: 'desktop', title: 'Apple, IoS', selected: false
       }, {
-        icon: 'desktop', title: 'Web'
-      }]
+        icon: 'desktop', title: 'Web', selected: false
+      }],
+      projectTypes: [],
+      activeStep: 1
+    }
+  },
+  methods: {
+    select (index) {
+      if (this.platforms[index].selected === false) {
+        this.platforms[index].selected = true
+      } else {
+        this.platforms[index].selected = false
+      }
+    },
+    next(){
+      this.activeStep++
+    },
+    previous(){
+      if(this.activeStep > 0){
+        this.activeStep--
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="html-content-holder">
-    <span v-html="content"></span>
+    <iframe :src="content" scrolling="no"></iframe>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -11,6 +11,15 @@
   height: 100%;
   overflow-y: auto;
   font-size: 90%;
+}
+
+iframe{
+  width: 100%;
+  float: left;
+  height: 100%;
+  border: 0px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 ::-webkit-scrollbar {
@@ -40,6 +49,10 @@
 </style>
 <script>
 export default {
+  mounted () {
+    if(this.content !== null){
+    }
+  },
   props: ['content']
 }
 </script>

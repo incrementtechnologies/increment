@@ -10,11 +10,11 @@
     <div class="devices">
 
       <span class="android">
-        <Android :content="'http://increment.ltd'"></Android>
+        <Android :content="'http://localhost:8080'"></Android>
       </span>
-      <div class="desktop">
-        <Desktop :content="'http://increment.ltd'"></Desktop>
-      </div>
+<!--       <div class="desktop">
+        <Desktop :content="'http://localhost:8080'"></Desktop>
+      </div> -->
     </div>
 
   </div>
@@ -72,7 +72,6 @@
   width: 50%;
   min-height: 100px;
   overflow-y: hidden;
-  margin-top: 75px;
   margin-bottom: 25px;
 }
 .desktop{
@@ -83,10 +82,11 @@
   margin-top: 100px;
 }
 .android{
-  height: 400px;
-  width: 30%;
+  height: 550px;
+  width: 45%;
   position: relative;
-  float: left;
+  float: right;
+  margin-right: 20%;
 }
 @media screen and (max-width: 992px) {
 
@@ -116,6 +116,7 @@
     height: 250px;
     margin-top: 0px;
     margin-left: 5%;
+    display: none;
   }
   .android{
     display: none;
