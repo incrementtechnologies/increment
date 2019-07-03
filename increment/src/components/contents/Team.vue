@@ -1,5 +1,5 @@
 <template>
-  <div class="increment-wrapper row" id="team" :style="{'background-image:':'url('+backgroundUrl+');'}">
+  <div class="increment-wrapper row teambg" id="team">
     <div class="col-sm-4">
       <h1 class="text-center text-primary team-title" style="margin-top: 50px;">Meet our Team</h1>
     <p  class="team-desc">
@@ -8,14 +8,14 @@
     </div>
     <div class="col-sm-4">
       <div class="text-center profile-image">
-        <img src="" width="150" height="150">
+        <img id="boxshadow" src="@/assets/kenpp.png" width="150" height="150">
         <h2 class="team-name">Kennette Canales</h2>
         <h3>CEO</h3>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="text-center profile-image">
-        <img v-bind:src="'~@/assets/' + teamMember1" width="150" height="150"/>
+        <img id="boxshadow" src="@/assets/philpp.png" width="150" height="150"/>
         <h2 class="team-name">Philip Salise</h2>
         <h3>Marketing</h3>
       </div>
@@ -93,12 +93,61 @@
 .team-name{
   padding-top: 20px;
 }
+.teambg{
+  background-image: url('~@/assets/kenpp.png');
+  background-size: 100%;
+}
 .profile-image{
   padding-top: 100px;
-  background-image: url('~@/assets/kenpp.png');
+}
+img{
+  border-radius: 50%;
 }
 .two{
   background-size: 100% auto;
+}
+#boxshadow {
+  position: relative;
+  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+  padding: 10px;
+  background: black;
+}
+
+/* Make the image fit the box */
+#boxshadow img {
+  width: 50%;
+  border: 1px solid #000000;
+  border-style: inset;
+}
+#boxshadow {
+  position: relative;
+  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  padding: 5px;
+  background: white;
+}
+
+/* Make the image fit the box */
+#boxshadow img {
+  width: 100%;
+  border: 1px solid #8a4419;
+  border-style: inset;
+}
+
+#boxshadow::after {
+  content: '';
+  position: absolute;
+  z-index: -1; /* hide shadow behind image */
+  -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);        
+  width: 70%; 
+  left: 15%; /* one half of the remaining 30% */
+  height: 100px;
+  bottom: 0;
 }
 @media (max-width: 992px) {
   .platform-container, .rectangle{
@@ -113,7 +162,6 @@
 export default {
   data () {
     return {backgroundUrl:require(),
-    teamMember1:'philpp.png',
     }
   },
   methods: {

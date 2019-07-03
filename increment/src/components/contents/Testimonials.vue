@@ -1,7 +1,7 @@
 <template>
   <div class="increment-wrapper" id="testimonials">
     <h1 class="text-center increment-title text-secondary">What they say to us!</h1>
-    <h3 class="text-center text-tertiary">We are very happy seeing our clients happy</h3>
+    <h3 class="text-center text-tertiary">We are very happy seeing that our clients are happy as well</h3>
     <div class="platform-container">
       <div class="text-center message-holder" v-for="(item, index) in testimonials" :key="index">
         <h1>
@@ -67,7 +67,7 @@ export default {
   data () {
     return {
       testimonials: [{
-        message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        message: 'Increment has been a great help in optimizing my company\'s business processes. The team is very responsive and dynamic. Kudos!',
         name: 'Shannen Tan',
         country: 'Philippines',
         position: 'President and CEO, Mezzo Hotel'
