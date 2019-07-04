@@ -1,11 +1,23 @@
 <template>
   <div class="increment-wrapper text-white" id="quotation">
     <h3 class="text-center" style="margin-top: 50px;">GET QUOTE</h3>
-    <h1 class="text-center">Choose your platform(s)</h1>
+    <h1 class="text-center">{{titles[activeStep - 1]}}</h1>
     <div class="platform-container" v-if="activeStep === 1">
       <span v-for="(item, index) in platforms" :key="index" class="rectangle" v-bind:class="{'selected': item.selected === true}" @click="select(index)">
         <font-awesome-icon :icon="item.icon" class="platform-item" style="margin-top: 40px;font-size: 48px;"></font-awesome-icon>
         <label class="platform-item" style="font-size: 18px; margin-top: 5px;">{{item.title}}</label>
+      </span>
+    </div>
+    <div class="platform-container" v-if="activeStep === 2">
+      <textarea rows="10" class="form-control" v-model="projectType" placeholder="Project details here..."></textarea>
+    </div>
+    <div class="platform-container" v-if="activeStep === 3">
+      <span class="features-holder" v-for="(item, index) in features" :key="index">
+        <span class="title">
+          <font-awesome-icon icon="square"  class="selection-option" v-bind:class="{'selected-option': item.select === true}" @click="addSelection(item, index)"></font-awesome-icon>
+          <label><b>{{item.title}}</b></label>
+        </span>
+        <label class="description">{{item.description}}</label>
       </span>
     </div>
     <div class="text-center buttons">
@@ -66,6 +78,46 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.features-holder{
+  width: 50%;
+  float: left;
+}
+
+.features-holder .title{
+  width: 100%;
+  float: left;
+  line-height: 24px;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+
+.features-holder .description{
+  float: left;
+  width: 100%;
+  padding-left: 42px;
+  font-size: 16px;
+}
+
+.features-holder .title label{
+  margin-bottom: 0px;
+  padding-left: 10px;
+  line-height: 32px;
+}
+.selection-option{
+  font-size: 32px;
+  color: white;
+  float: left;
+}
+
+.selection-option:hover{
+  cursor: pointer;
+  color: $tertiary;
+}
+
+.selected-option{
+  color: $tertiary;
+}
 @media (max-width: 992px) {
   .platform-container, .rectangle{
     width: 96%;
@@ -86,8 +138,14 @@ export default {
       }, {
         icon: 'desktop', title: 'Web', selected: false
       }],
-      projectTypes: [],
-      activeStep: 1
+      titles: ['Choose you platform(s)', 'Choose type of projects', 'Add your features'],
+      projectType: null,
+      activeStep: 3,
+      features: [{
+        title: 'Account Management', description: 'This is a test', select: false
+      }, {
+        title: 'Domain and Hosting', description: 'This is a test', select: false
+      }]
     }
   },
   methods: {
@@ -98,13 +156,26 @@ export default {
         this.platforms[index].selected = false
       }
     },
-    next(){
-      this.activeStep++
+    next () {
+      let google = require('@/google.js')
+      if (this.activeStep === 3) {
+        google.auth()
+      } else {
+        this.activeStep++
+      }
     },
-    previous(){
-      if(this.activeStep > 0){
+    previous () {
+      if (this.activeStep > 0) {
         this.activeStep--
       }
+    },
+    addSelection (item, index) {
+      if (this.features[index].select === false) {
+        this.features[index].select = true
+      } else {
+        this.features[index].select = false
+      }
+      // push to array hear later on
     }
   }
 }

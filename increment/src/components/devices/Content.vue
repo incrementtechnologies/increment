@@ -49,10 +49,6 @@ iframe{
 </style>
 <script>
 export default {
-  mounted () {
-    if(this.content !== null){
-    }
-  },
   props: ['content']
 }
 </script>
