@@ -11,6 +11,9 @@
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
+.increment-wrapper{
+  background: white;
+}
 .wrapper-container{
   width: 100%;
   float: left;

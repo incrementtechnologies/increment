@@ -1,170 +1,150 @@
 <template>
-  <div class="increment-wrapper row teambg" id="team">
-    <div class="col-sm-4">
-      <h1 class="text-center text-primary team-title" style="margin-top: 50px;">Meet our Team</h1>
-    <p  class="team-desc">
-      "We're a team of highly motivated technopreneurs. We do projects with a focus on quality and customer satisfaction. Our experience over the years let us create worthy online products that people can relate to, just like you."
-    </p>
-    </div>
-    <div class="col-sm-4">
-      <div class="text-center profile-image">
-        <img id="boxshadow" src="@/assets/kenpp.png" width="150" height="150">
-        <h2 class="team-name">Kennette Canales</h2>
-        <h3>CEO</h3>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="text-center profile-image">
-        <img id="boxshadow" src="@/assets/philpp.png" width="150" height="150"/>
-        <h2 class="team-name">Philip Salise</h2>
-        <h3>Marketing</h3>
+  <div class="increment-wrapper" id="team">
+    <div class="team-holder">
+      <h1 class="text-center increment-title text-white">Who are we?</h1>
+      <h4 class="text-center text-white" style="margin-top: 25px;"><b>Increment Technologies</b> is a team of highly motivated technopreneurs. We do projects with a focus on quality and customer satisfaction. Our experience over the years let us create worthy online products that people can relate to, just like you.</h4>  
+      <div class="platform-container">
+        <div class="text-center message-holder" v-for="(item, index) in teams" :key="index">
+          <span class="profile">
+            <img :src="item.profile">
+          </span>
+          <h6 class="text-secondary"><b>{{item.name}}</b></h6>
+          <label class="gray"><b>{{item.work}}</b></label>
+          <label class="gray">{{item.position}}</label>
+          <label v-if="item.socialMedia.length > 0" class="social-media">
+            <font-awesome-icon v-for="(socialMedia, socialMediaIndex) in item.socialMedia" :key="socialMediaIndex" :icon="['fab', socialMedia.icon]" class="icon"></font-awesome-icon>
+          </label>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
-.platform-container{
-  width: 60%;
-  float: left;
-  margin-top: 25px;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-.rectangle{
-  width: 32%;
-  float: left;
-  height: 150px;
-  background: $tertiary;
-  margin-left: 1%;
-  text-align: center;
-}
-.rectangle:hover{
-  cursor: pointer;
-  background: $secondary;
-}
 .increment-wrapper{
-  background: transparent;
-  padding-left: 40px;
-}
-.platform-item{
-  width: 100%;
-  float: left;
-}
-.buttons{
-  width: 100%;
-  float: left;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: $secondary;
-  border-color: #fffbfb !important;
-  outline:none;
-  font-size: 24px;
-  padding: 18px 24px;
-  transition:0.2s background-color;
-}
-
-.btn-primary:hover{
-  cursor: pointer;
-}
-.btn-primary:active {
-  transform:translateY(1px);
-}
-
-.form-control{
-  min-height: 50px !important;
-}
-.error-border{
-  border: solid 1px $error;
-}
-.sucess-border{
-  border: solid 1px $secondary;
-}
-.team-desc{
-  text-align: center;
-}
-.team-title{
-  padding-top: 150px;
-}
-.team-name{
-  padding-top: 20px;
-}
-.teambg{
-  background-image: url('~@/assets/kenpp.png');
-  background-size: 100%;
-}
-.profile-image{
-  padding-top: 100px;
-}
-img{
-  border-radius: 50%;
-}
-.two{
+  background-image: url('~@/assets/team.png');
   background-size: 100% auto;
+  background-repeat: no-repeat;
 }
-#boxshadow {
-  position: relative;
-  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
-  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
-  padding: 10px;
-  background: black;
+.team-holder{
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  float: left;
+  padding: 0px 10%;
 }
-
-/* Make the image fit the box */
-#boxshadow img {
-  width: 50%;
-  border: 1px solid #000000;
-  border-style: inset;
+.platform-container{
+  width: 100%;
+  float: left;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
-#boxshadow {
-  position: relative;
-  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
-  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-  padding: 5px;
+.increment-title{
+  margin-top: 100px;
+}
+.message-holder{
+  float: left;
+  height: auto;
+  border-radius: 20px;
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 50px;
   background: white;
 }
-
-/* Make the image fit the box */
-#boxshadow img {
+.message-holder h1{
+  color: $tertiary;
+  margin-top: -25px;
+}
+.message-holder p{
+  padding: 0px 10px;
+}
+.message-holder label{
   width: 100%;
-  border: 1px solid #8a4419;
-  border-style: inset;
+  float: left;
+}
+.gray{
+  color: gray;
 }
 
-#boxshadow::after {
-  content: '';
-  position: absolute;
-  z-index: -1; /* hide shadow behind image */
-  -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);        
-  width: 70%; 
-  left: 15%; /* one half of the remaining 30% */
-  height: 100px;
-  bottom: 0;
+.profile{
+  width: 100%;
+  float: left;
+  min-height: 50px;
+  overflow-x: hidden;
+  text-align: center;
 }
+
+.profile img{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-media{
+  font-size: 24px;
+  color: $primary;
+}
+
+.social-media .icon{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.social-media .icon:hover{
+  cursor: pointer;
+  color: $secondary;
+}
+
 @media (max-width: 992px) {
-  .platform-container, .rectangle{
-    width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 10px;
+  .platform-container{
+    margin-top: 50px;
   }
+  .message-holder{
+    width: 90%;
+  }
+  .increment-title{
+    margin-top: 50px;
+  }
+
+  .increment-wrapper{
+    background-size: auto 100%;
+  }
+
 }
 </style>
 <script>
 export default {
   data () {
-    return {backgroundUrl:require(),
+    return {
+      teams: [{
+        profile: require('../../assets/kenpp.png'),
+        name: 'Engr. Kennette Canales',
+        work: 'Full-Stack web and mobile developer',
+        position: 'Executive / Operation',
+        socialMedia: [{
+          icon: 'facebook-f', url: 'https://www.facebook.com/kennCK94'
+        }, {
+          icon: 'linkedin', url: 'https://www.linkedin.com/in/kennette-canales-7a6648b1/'
+        }, {
+          icon: 'twitter', url: 'https://twitter.com/CKennDaONE'
+        }, {
+          icon: 'instagram', url: 'https://www.instagram.com/ckennda1/'
+        }]
+      }, {
+        profile: require('../../assets/philpp.png'),
+        name: 'Engr. Philip Johainnes Salise',
+        work: 'Software Developer',
+        position: 'Executive / Marketing',
+        socialMedia: [{
+          icon: 'facebook-f', url: 'https://www.facebook.com/ajohainnes.salise'
+        }, {
+          icon: 'linkedin', url: 'https://www.linkedin.com/in/phsalise/'
+        }]
+      }]
     }
-  },
-  methods: {
   }
 }
 </script>

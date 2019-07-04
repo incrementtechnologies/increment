@@ -55,15 +55,15 @@
   background-repeat: no-repeat;
 }
 .one{
-  background-image: url('~@/assets/print.jpg');
+  background-image: url('~@/assets/print.png');
   background-size: 100%;
 }
 .two{
-  background-image: url('~@/assets/payhiram.jpg');
+  background-image: url('~@/assets/payhiram.png');
   background-size: 100% auto;
 }
 .three{
-  background-image: url('~@/assets/bot.jpg');
+  background-image: url('~@/assets/bot.png');
   background-size: 100% auto;
 }
 .platform-container{

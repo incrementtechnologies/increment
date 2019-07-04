@@ -36,10 +36,11 @@ body {
 }
 
 .header-nightsky {
-    background:transparent;
-    background-size: cover;
-    background-position: bottom;
-    padding-bottom: 100px;
+    background-image: url('~@/assets/banner.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .header-nightsky .navbar-nav>li>a {
@@ -54,7 +55,6 @@ body {
     padding-bottom: 20px;
     width: 100%;
     border-bottom:none;
-    background-color: $primary;
     min-width: 300px;
     border: none;
 }
@@ -134,6 +134,9 @@ body {
   text-decoration: underline;
 }
 @media screen and (max-width: 767px) {
+  .header-nightsky{
+    background-size: auto 100%;
+  }
 
   .header-nightsky .navbar-default .navbar-nav .open .dropdown-menu>li>a{
     color: white;

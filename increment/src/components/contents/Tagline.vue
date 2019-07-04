@@ -23,7 +23,6 @@
 @import "~@/styles/colors.scss";
 .increment-wrapper-custom {
   min-height: 80vh;
-  background-color: $primary;
   overflow-y: hidden;
 }
 .hero {

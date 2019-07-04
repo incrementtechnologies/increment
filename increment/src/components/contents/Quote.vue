@@ -4,7 +4,8 @@
     <h1 class="text-center">{{titles[activeStep - 1]}}</h1>
     <div class="platform-container" v-if="activeStep === 1">
       <span v-for="(item, index) in platforms" :key="index" class="rectangle" v-bind:class="{'selected': item.selected === true}" @click="select(index)">
-        <font-awesome-icon :icon="item.icon" class="platform-item" style="margin-top: 40px;font-size: 48px;"></font-awesome-icon>
+        <font-awesome-icon :icon="item.icon" class="platform-item" style="margin-top: 40px;font-size: 48px;" v-if="item.icon ===  'desktop'"></font-awesome-icon>
+        <font-awesome-icon :icon="['fab', item.icon]" class="platform-item" style="margin-top: 40px;font-size: 48px;" v-if="item.icon !==  'desktop'"></font-awesome-icon>
         <label class="platform-item" style="font-size: 18px; margin-top: 5px;">{{item.title}}</label>
       </span>
     </div>
@@ -132,15 +133,15 @@ export default {
   data () {
     return {
       platforms: [{
-        icon: 'desktop', title: 'Android', selected: false
+        icon: 'android', title: 'Android', selected: false
       }, {
-        icon: 'desktop', title: 'Apple, IoS', selected: false
+        icon: 'apple', title: 'Apple, IoS', selected: false
       }, {
         icon: 'desktop', title: 'Web', selected: false
       }],
       titles: ['Choose you platform(s)', 'Choose type of projects', 'Add your features'],
       projectType: null,
-      activeStep: 3,
+      activeStep: 1,
       features: [{
         title: 'Account Management', description: 'This is a test', select: false
       }, {

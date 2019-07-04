@@ -24,6 +24,9 @@
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
+.increment-wrapper{
+  background: white;
+}
 .platform-container{
   width: 60%;
   float: left;
@@ -89,6 +92,9 @@
     margin-left: 2%;
     margin-right: 2%;
     margin-bottom: 10px;
+  }
+  .increment-wrapper{
+    background: white;
   }
 }
 </style>
