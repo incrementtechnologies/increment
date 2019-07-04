@@ -12,7 +12,7 @@
           <label class="gray"><b>{{item.work}}</b></label>
           <label class="gray">{{item.position}}</label>
           <label v-if="item.socialMedia.length > 0" class="social-media">
-            <font-awesome-icon v-for="(socialMedia, socialMediaIndex) in item.socialMedia" :key="socialMediaIndex" :icon="['fab', socialMedia.icon]" class="icon"></font-awesome-icon>
+            <font-awesome-icon v-for="(socialMedia, socialMediaIndex) in item.socialMedia" :key="socialMediaIndex" :icon="['fab', socialMedia.icon]" class="icon" @click="redirect(socialMedia.url)"></font-awesome-icon>
           </label>
         </div>
       </div>
@@ -144,6 +144,11 @@ export default {
           icon: 'linkedin', url: 'https://www.linkedin.com/in/phsalise/'
         }]
       }]
+    }
+  },
+  methods: {
+    redirect(url){
+      window.open(url, '_blank')
     }
   }
 }

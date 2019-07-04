@@ -10,7 +10,7 @@
     <div class="devices">
 
       <span class="android">
-        <Android :content="'http://localhost:8080'"></Android>
+        <Android :content="'http://increment.ltd/#/'"></Android>
       </span>
 <!--       <div class="desktop">
         <Desktop :content="'http://localhost:8080'"></Desktop>
