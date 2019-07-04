@@ -178,6 +178,8 @@ export default {
       }, {
         title: 'QUOTATION', payload: '#quotation'
       }, {
+        title: 'TEAM', payload: '#team'
+      }, {
         title: 'CONTACT US', payload: '#contact-us'
       }]
     }
