@@ -6,6 +6,7 @@
     <Values></Values>
     <Testimonials></Testimonials>
     <Quote></Quote>
+    <Team></Team>
     <ContactUs></ContactUs>
   </div>
 </template>
@@ -20,6 +21,7 @@ import Values from '@/components/contents/Values.vue'
 import Testimonials from '@/components/contents/Testimonials.vue'
 import HowWeWork from '@/components/contents/HowWeWork.vue'
 import Products from '@/components/contents/Products.vue'
+import Team from '@/components/contents/Team.vue'
 export default {
   components: {
     Tagline,
@@ -29,7 +31,8 @@ export default {
     Values,
     Testimonials,
     HowWeWork,
-    Products
+    Products,
+    Team
   }
 }
 </script>
