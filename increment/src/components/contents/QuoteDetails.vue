@@ -1,9 +1,7 @@
 <template>
-  <div class="increment-wrapper" id="contact-us">
-    <h1 class="text-center text-primary" style="margin-top: 50px;">Contact Us</h1>
+  <div>
     <div class="platform-container">
       <label v-if="validationFlag === true" class="text-danger">Opps! All fields are required.</label>
-      <label v-if="validationFlag === false && send === true" class="text-primary">Successfully Sent!</label>
       <br>
       <div class="form-group">
         <label class="text-danger" v-if="contact.full_name !== null && contact.full_name.length < 5">Full name must be greater than 5 characters.</label>
@@ -19,21 +17,16 @@
       </div>
     </div>
     <div class="text-center buttons">
-      <div class="btn btn-primary" @click="submit()">SEND</div>
+      <div class="btn btn-primary" @click="previous()">BACK</div>
+      <div class="btn btn-primary" @click="submit()">CONTINUE</div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
-.increment-wrapper{
-  background: white;
-}
 .platform-container{
-  width: 60%;
+  width: 100%;
   float: left;
-  margin-top: 25px;
-  margin-left: 20%;
-  margin-right: 20%;
 }
 .rectangle{
   width: 32%;
@@ -100,8 +93,6 @@
 }
 </style>
 <script>
-import config from '@/config.js'
-import Jquery from 'jquery'
 export default {
   data () {
     return {
@@ -111,8 +102,7 @@ export default {
         email: null,
         details: null
       },
-      validationFlag: false,
-      send: false
+      validationFlag: false
     }
   },
   methods: {
@@ -141,20 +131,11 @@ export default {
         this.validationFlag = true
       } else {
         this.validationFlag = false
-        this.send = true
-        this.create()
+        this.$emit('continueEvent', this.contact)
       }
     },
-    create () {
-      let data = 'type=contacts&fullname=' + JSON.stringify(this.contact.full_name) + '&email=' + JSON.stringify(this.contact.email) + '&details=' + JSON.stringify(this.contact.details)
-      Jquery.ajaxSetup({
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }
-      })
-      Jquery.get(config.url + data, response => {
-        console.log(response)
-      })
+    previous () {
+      this.$emit('previousEvent')
     }
   }
 }

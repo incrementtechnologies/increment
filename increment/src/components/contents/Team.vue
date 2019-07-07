@@ -2,7 +2,7 @@
   <div class="increment-wrapper" id="team">
     <div class="team-holder">
       <h1 class="text-center increment-title text-white">Who are we?</h1>
-      <h4 class="text-center text-white" style="margin-top: 25px;"><b>Increment Technologies</b> is a team of highly motivated technopreneurs. We do projects with a focus on quality and customer satisfaction. Our experience over the years let us create worthy online products that people can relate to, just like you.</h4>  
+      <h4 class="text-center text-white" style="margin-top: 25px;"><b>Increment Technologies</b> is a team of highly motivated technopreneurs. We do projects with a focus on quality and customer satisfaction. Our experience over the years let us create worthy online products that people can relate to, just like you.</h4>
       <div class="platform-container">
         <div class="text-center message-holder" v-for="(item, index) in teams" :key="index">
           <span class="profile">
@@ -147,7 +147,7 @@ export default {
     }
   },
   methods: {
-    redirect(url){
+    redirect (url) {
       window.open(url, '_blank')
     }
   }
