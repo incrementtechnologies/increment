@@ -196,13 +196,13 @@ export default {
         align: 'left',
         website: 'http://idfactory.ph'
       }, {
-        tagline: 'Quick Loans. Transparent Investment.',
-        description: 'Making small amount of loans processes a lot easier. Want to make an investment also? PayHiram provides you a tool for investment with transparent transactions.',
+        tagline: 'Send cash online in a new and convenient way!',
+        description: 'In Payhiram, we have partners to fulfill your cash needed in any locations you want. Start sending today!',
         logo: null,
         app: 'PayHiram',
         url: null,
         align: 'right',
-        website: 'http://payhiram.com'
+        website: 'https://payhiram.ph'
       }, {
         tagline: 'Making a customizable messenger bot.',
         description: 'We build customize chatbot application for facebook messenger, whatsapp and more.',

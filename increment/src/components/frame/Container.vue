@@ -6,7 +6,7 @@
     <Values></Values>
     <Testimonials></Testimonials>
     <Quote></Quote>
-    <Team></Team>
+    <!-- <Team></Team> -->
     <ContactUs></ContactUs>
   </div>
 </template>

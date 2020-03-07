@@ -180,9 +180,11 @@ export default {
         title: 'TESTIMONIALS', payload: '#testimonials'
       }, {
         title: 'QUOTATION', payload: '#quotation'
-      }, {
-        title: 'TEAM', payload: '#team'
-      }, {
+      },
+      // {
+      //   title: 'TEAM', payload: '#team'
+      // },
+      {
         title: 'CONTACT US', payload: '#contact-us'
       }]
     }
