@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import '@fortawesome/fontawesome/styles.css'
 import fontawesome from '@fortawesome/fontawesome'
 import { faEdit } from '@fortawesome/fontawesome-free-solid'
+import VueFacebookPixel from 'vue-analytics-facebook-pixel'
 
 fontawesome.config = {
   autoAddCss: false
@@ -22,6 +23,10 @@ library.add(faUserSecret)
 library.add(faEdit)
 library.add(faCircle)
 library.add(faApple, faAndroid, faFacebookF, faLinkedin, faTwitter, faInstagram)
+Vue.use(VueFacebookPixel)
+Vue.analytics.fbq.init('315566302798119', {
+  em: 'kennettecanales@gmail.com'
+})
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 

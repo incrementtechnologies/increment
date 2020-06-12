@@ -171,7 +171,7 @@ export default {
       }, {
         title: 'SERVICES', payload: '#services'
       }, {
-        title: 'PRODUCTS', payload: '#products'
+        title: 'Projects', payload: '#products'
       }, {
         title: 'PROCESS', payload: '#process'
       }, {
@@ -195,6 +195,9 @@ export default {
   },
   methods: {
     scrollTo (div) {
+      this.$analytics.fbq.event('ViewContent', {
+        content_name: div
+      })
       this.barFlag = false
       Jquery('html, body').animate({
         scrollTop: Jquery(div).offset().top

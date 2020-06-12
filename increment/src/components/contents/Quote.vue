@@ -198,7 +198,7 @@
 </style>
 <script>
 import QuoteDetails from '@/components/contents/QuoteDetails.vue'
-import config from '@/config.js'
+import COMMON from '@/common.js'
 import Jquery from 'jquery'
 export default {
   mounted () {
@@ -345,7 +345,10 @@ export default {
           'Access-Control-Allow-Origin': '*'
         }
       })
-      Jquery.get(config.url + data, response => {
+      Jquery.get(COMMON.api + data, response => {
+        this.$analytics.fbq.event('initialCheckout', {
+          content_name: 'Contact'
+        })
         console.log(response)
       })
     }

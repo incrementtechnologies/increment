@@ -100,7 +100,7 @@
 }
 </style>
 <script>
-import config from '@/config.js'
+import COMMON from '@/common.js'
 import Jquery from 'jquery'
 export default {
   data () {
@@ -152,7 +152,10 @@ export default {
           'Access-Control-Allow-Origin': '*'
         }
       })
-      Jquery.get(config.url + data, response => {
+      Jquery.get(COMMON.api + data, response => {
+        this.$analytics.fbq.event('Contact', {
+          content_name: 'Contact'
+        })
         console.log(response)
       })
     }

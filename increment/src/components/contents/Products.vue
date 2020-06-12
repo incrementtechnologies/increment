@@ -1,240 +1,184 @@
 <template>
-  <div class="increment-wrapper" id="products" v-bind:class="{'one': activeIndex === 1, 'two': activeIndex === 2, 'three': activeIndex === 3}">
-    <h1 class="text-center increment-title text-primary">What we provide?</h1>
-    <h2 class="text-center text-secondary">Our Products</h2>
-    <div class="platform-container">
-      <div v-for="(item, index) in products" :key="index">
-        <div class="product-holder" v-if="activeIndex === (index + 1)">
-          <span class="details" v-if="item.align === 'left'">
-            <div class="description">
-              <h3 class="text-white text-center">{{item.app}}</h3>
-              <h2 class="text-white">{{item.tagline}}</h2>
-              <p class="text-white"><i>{{item.description}}</i></p>
-            </div>
-            <div class="text-center">
-              <a :href="item.website" target="_BLANK">
-                <button class="btn btn-primary" style="margin-top: 25px;">Learn more</button>
-              </a>
-            </div>
-          </span>
-          <span class="details devices">
-<!--             <span class="right" v-if="item.align === 'left'">
-              <IPhoneX :content="item.website"></IPhoneX>
-            </span>
-            <span class="left" v-if="item.align === 'right'">
-              <IPhoneX :content="item.website"></IPhoneX>
-            </span> -->
-          </span>
-          <span class="details" v-if="item.align === 'right'">
-            <div class="description">
-              <h3 class="text-white text-center">{{item.app}}</h3>
-              <h2 class="text-white">{{item.tagline}}</h2>
-              <p class="text-white"><i>{{item.description}}</i></p>
-            </div>
-            <div class="text-center">
-              <a :href="item.website" target="_BLANK">
-                <button class="btn btn-primary" style="margin-top: 25px;">Learn more</button>
-              </a>
-            </div>
-          </span>
+  <div class="project-wrapper" id="products">
+    <h1 class="text-center text-primary">Projects</h1>
+    <h2 class="text-center text-secondary">Our pleasure to work with our clients</h2>
+    <div class="projects-container">
+      <div class="projects-holder"  v-for="(item, index) in projects" :key="index" @click="redirect(item)">
+        <div class="projects-image">
+          <img :src="item.url">
+          <div class="hover-holder">
+            <font-awesome-icon :icon="faGlobe" class="icon"></font-awesome-icon>
+            <i>Click to visit website.</i>
+          </div>
+        </div>
+        <div class="projects-details">
+          <label style="padding-top: 5px;"><b>{{item.title}} - {{item.country}}</b></label>
+          <p>{{item.platform}}</p>
+          <span style="padding-top: 5px;"><b>{{item.description}}</b></span>
         </div>
       </div>
-      <span class="arrow-icons text-primary">
-        <font-awesome-icon icon="chevron-left" class="arrow-left" v-if="activeIndex > 1" @click="previous()"></font-awesome-icon>
-        <font-awesome-icon icon="chevron-right" class="arrow-right" v-if="activeIndex < products.length" @click="next()"></font-awesome-icon>
-      </span>
-      <span class="circle-icons">
-        <font-awesome-icon icon="circle" v-for="item in products.length" :key="item" class="icon" v-bind:class="{'text-tertiary': activeIndex === item, 'text-white': activeIndex !== item}"></font-awesome-icon>
-      </span>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "~@/styles/colors.scss";
-.increment-wrapper{
-  background-repeat: no-repeat;
-}
-.one{
-  background-image: url('~@/assets/print.png');
-  background-size: 100%;
-}
-.two{
-  background-image: url('~@/assets/payhiram.png');
-  background-size: 100% auto;
-}
-.three{
-  background-image: url('~@/assets/bot.png');
-  background-size: 100% auto;
-}
-.platform-container{
-  width: 100%;
-  float: left;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  position: relative;
-  min-height: 80vh;
-  overflow-y: hidden;
-}
-.arrow-icons{
-  position: absolute;
-  top: 30%;
-  width: 100%;
-  z-index: 1;
-  padding: 0% 5%;
-  font-size: 50px;
-}
-.arrow-icons .arrow-left{
-  float: left;
-}
-.arrow-icons .arrow-right{
-  float: right;
-}
-.arrow-left:hover, .arrow-right:hover{
-  cursor: pointer;
-  color: $tertiary;
-}
-.increment-title{
-  margin-top: 50px;
-}
-.product-holder{
-  height: auto;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 50px;
-  position: absolute;
-}
-.product-holder .description{
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-}
-.description p{
-  text-align: justify;
-}
-.product-holder .details{
-  width: 50%;
-  float: left;
-  height: 100%;
-}
-.circle-icons{
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  height: 50px;
-  top: 95%;
-}
-.circle-icons .icon{
-  padding-right: 2px;
-  padding-left: 2px;
-  font-size: 24px;
-}
-.circle-icons .icon:hover{
-  cursor: pointer;
-  color: $primary;
-}
-.left{
-  height: 400px;
-  width: 220px;
-  float: left;
-  margin-left: 5%;
-}
-.right{
-  height: 400px;
-  width: 220px;
-  float: right;
-  margin-right: 5%;
-}
-.btn-primary {
-  color: #fff;
-  background-color: $secondary;
-  border-color: #fffbfb !important;
-  outline:none;
-  font-size: 24px;
-  padding: 18px 24px;
-  transition:0.2s background-color;
-}
-@media (max-width: 992px) {
-  .platform-container{
-    margin-top: 50px;
+  .project-wrapper{
+    width: 100%;
+    float: left;
+    background: white;
   }
-  .product-holder{
+
+  .projects-container{
+    width: 90%;
+    float: left;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .projects-holder{
+    float: left;
+    margin-right: 2%;
+    border: solid 1px #fff;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    width: 23%;
+  }
+  .projects-holder:hover{
+    cursor: pointer;
+    border: solid 1px #ccc;
+    .hover-holder{
+      display: block;
+    }
+  }
+  .projects-image{
+    width: 100%;
+    float: left;
+    position: relative;
+    text-align: center;
+    min-height: 50px;
+    overflow-y: hidden;
+  }
+
+  .projects-image img{
+    height: auto;
+    width: 100%;
+  }
+
+  .projects-details{
+    min-height: 50px;
+    width: 100%;
+    float: left;
+    overflow-y: hidden;
+    background: $secondary;
+  }
+
+  .hover-holder{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon{
+    font-size: 36px;
+    position: relative;
+    top: calc(50% - 18px);
+    width: 100%;
+    float: left;
+  }
+
+  i{
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+
+  label, span{
+    width: 100%;
+    float: left;
+  }
+
+  p{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
+    color: white;
+  }
+
+  label{
+    line-height: 50px;
+    color: white;
+    padding-left: 10px;
+    margin: 0px;
+  }
+
+  span{
+    padding: 10px;
+    min-height: 100px;
+    overflow-y: hidden;
+    color: white;
+  }
+
+@media (max-width: 992px) {
+  .projects-container, .projects-holder{
     width: 98%;
     margin-right: 1%;
     margin-left: 1%;
-  }
-  .product-holder .details {
-    width: 100%;
-  }
-  .one, .two, .three{
-    background-size: auto 100%;
-  }
-  .devices{
-    display: none;
   }
 }
 </style>
 <script>
 import IPhoneX from '@/components/devices/IPhoneX.vue'
+import COMMON from '@/common.js'
+import Jquery from 'jquery'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 export default {
   mounted () {
-    setInterval(() => {
-      if (this.forwardFlag === true) {
-        this.next()
-      } else {
-        this.previous()
-      }
-    }, 4000)
+    this.retrieve()
   },
   data () {
     return {
-      products: [{
-        tagline: 'Connecting you to nearby printing.',
-        description: 'PaPrint lets you design and create custom professional-looking printing templates. Connecting to printing partners a lot easier.',
-        logo: null,
-        app: 'PaPrint',
-        url: null,
-        align: 'left',
-        website: 'http://idfactory.ph'
-      }, {
-        tagline: 'Send cash online in a new and convenient way!',
-        description: 'In Payhiram, we have partners to fulfill your cash needed in any locations you want. Start sending today!',
-        logo: null,
-        app: 'PayHiram',
-        url: null,
-        align: 'right',
-        website: 'https://payhiram.ph'
-      }, {
-        tagline: 'Making a customizable messenger bot.',
-        description: 'We build customize chatbot application for facebook messenger, whatsapp and more.',
-        logo: null,
-        app: 'iLinya',
-        url: null,
-        align: 'left',
-        website: 'http://ilinya.com'
-      }],
+      projects: [],
       activeIndex: 1,
-      forwardFlag: true
+      forwardFlag: true,
+      faGlobe: faGlobe
     }
   },
   components: {
     IPhoneX
   },
   methods: {
-    previous () {
-      if (this.activeIndex > 1) {
-        this.activeIndex--
-        this.forwardFlag = false
-      } else {
-        this.forwardFlag = true
+    redirect (item) {
+      if (item.description !== 'Confidential') {
+        window.open(item.link, '_BLANK')
       }
     },
-    next () {
-      if (this.activeIndex < this.products.length) {
-        this.activeIndex++
-        this.forwardFlag = true
-      } else {
-        this.forwardFlag = false
-      }
+    retrieve () {
+      let sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1IMaYClh5HLbvgkW961a-PRLi3UCSV2ZCjsIa5nOeWwQ/5/public/values?alt=json'
+      Jquery.get(sheetUrl, response => {
+        let entries = response.feed.entry
+        for (var i = 0; i < entries.length; i += 6) {
+          if (i > 5) {
+            let object = {
+              title: entries[i].content.$t,
+              description: entries[i + 1].content.$t,
+              url: COMMON.host + '/static/img/' + entries[i + 2].content.$t,
+              platform: entries[i + 3].content.$t,
+              link: entries[i + 4].content.$t,
+              country: entries[i + 5].content.$t
+            }
+            this.projects.push(object)
+          }
+        }
+      })
     }
   }
 }
