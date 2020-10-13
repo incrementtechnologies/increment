@@ -121,6 +121,75 @@
     display: none;
   }
 }
+@media screen and (max-width: 1344px) {
+  .android{
+  height: 550px;
+  width: 48%;
+  position: relative;
+  float: right;
+  margin-right: 20%;
+}
+}
+@media screen and (max-width: 1265px) {
+  .android{
+  height: 530px;
+  width: 49%;
+  position: relative;
+  float: right;
+  margin-right: 20%;
+}
+}
+@media screen and (max-width: 1193px) {
+  .android{
+  height: 534px;
+  width: 45%;
+  position: relative;
+  float: right;
+  margin-right: 20%;
+}
+}
+
+@media screen and (max-width: 1068px) {
+  .android{
+  height: 523px;
+  width: 45%;
+  position: relative;
+  float: right;
+  margin-right: 20%;
+}
+}
+@media screen and (max-width: 1043px) {
+  .android{
+  height: 520px;
+  width: 45%;
+  position: relative;
+  float: right;
+  margin-right: 24%;
+}
+}
+@media screen and (max-width: 1030px) {
+  .android{
+  height: 509px;
+  width: 45%;
+  position: relative;
+  float: right;
+  margin-right: 24%;
+}
+}
+@media screen and (max-width: 1019px) {
+  .android{
+  height: 495px;
+  width: 45%;
+  position: relative;
+  float: right;
+  margin-right: 24%;
+}
+}
+@media screen and (max-width: 1000px) {
+  .android{
+    display: none;
+}
+}
 </style>
 <script>
 import Desktop from '@/components/devices/Desktop.vue'
